@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Carta Romántica</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      color: #fff;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-top: 50px;
+    }
+
+    p {
+      font-size: 1.3em;
+      margin: 20px auto;
+      max-width: 500px;
+      padding: 0 20px;
+    }
+
+    button {
+      padding: 12px 20px;
+      border: none;
+      background: #fff;
+      color: #e94e77;
+      font-size: 1.1em;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 25px;
+    }
+
+    button:hover {
+      background: #ffe6e6;
+    }
+
+    .corazon {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      background: url('https://cdn-icons-png.flaticon.com/512/833/833472.png') no-repeat center center;
+      background-size: contain;
+      animation: caer 5s linear infinite;
+    }
+
+    @keyframes caer {
+      0% {
+        transform: translateY(-100px) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>💖 Carta para Alguien Muy Especial 💖</h1>
+
+  <p>
+    Desde que llegaste a mi vida, todo tiene más color, más sentido, más magia.  
+    Esta carta es solo un pequeño reflejo de todo lo que siento.  
+    Gracias por existir y hacer que mi mundo sea mejor con solo una sonrisa. 🌟  
+    Nunca lo olvides: sos especial, sos amor, sos todo.  
+  </p>
+
+  <button onclick="document.getElementById('musica').play()">🎶 Reproducir Música</button>
+  <audio id="musica" src="Stephen Sanchez_ Em Beihold -  Until I Found You (Lyrics)(MP3_160K).mp3"></audio>
+
+  <script>
+    function crearCorazon() {
+      const corazon = document.createElement('div');
+      corazon.classList.add('corazon');
+      corazon.style.left = Math.random() * 100 + 'vw';
+      corazon.style.animationDuration = (Math.random() * 3 + 3) + 's';
+      document.body.appendChild(corazon);
+      setTimeout(() => {
+        corazon.remove();
+      }, 6000);
+    }
+
+    setInterval(crearCorazon, 200);
+  </script>
+</body>
+</html>
